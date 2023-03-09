@@ -19,8 +19,18 @@ CREATE TABLE recipes (
     preptime VARCHAR(100) NOT NULL,
     cooktime VARCHAR(100) NOT NULL,
     instructions TEXT NOT NULL,
-    submitteduser INT
+    submitteduser INT NOT NULL,
     timesubmitstamp INT NOT NULL,
     upvotes INT NOT NULL,
-    downvotes INT NOT NULL
+    downvotes INT NOT NULL,
+    vegan BOOLEAN NOT NULL,
+    glutenfree BOOLEAN NOT NULL,
+    vegetarian BOOLEAN NOT NULL,
+    pescatarian BOOLEAN NOT NULL,
+    spicy INT NOT NULL,
+    lowcarb BOOLEAN NOT NULL,
+    nuts BOOLEAN NOT NULL,
+    dairy BOOLEAN NOT NULL,
+    seafood BOOLEAN NOT NULL,
+    alcohol BOOLEAN NOT NULL
 );
