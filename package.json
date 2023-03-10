@@ -3,3 +3,12 @@
     "sequelize": "^6.29.2"
   }
 }
+{
+  "name": "cam-test-server",
+  "version": "1.0.0",
+  "main": "cam-index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
