@@ -32,5 +32,7 @@ CREATE TABLE recipes (
     nuts BOOLEAN NOT NULL,
     dairy BOOLEAN NOT NULL,
     seafood BOOLEAN NOT NULL,
-    alcohol BOOLEAN NOT NULL
+    alcohol BOOLEAN NOT NULL,
+    upvotes INT NOT NULL,
+    downvotes INT NOT NULL
 );
