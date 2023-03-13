@@ -46,27 +46,45 @@ router.post('/logout', (req, res) => {
 module.exports = router;
 
 
+// route to create a user
+// router.post('/postrecipe', async (req, res) => {
+    
+// });
+
+
 
 
 // route to post recipe
 router.post('/postrecipe', async (req, res) => {
     // grab form information
     //bring it into database
+
+    //log it:
+    console.info(`${req.method} request received`);
 });
 
 // Route to get the user's recipes
 router.get('/userrecipes', async (req, res) => {
     // grab recipes from db based on user ID 
+
+    //log it:
+    console.info(`${req.method} request received`);    
 });
 
 // Route to get all recipes (or one route to get recipes based on different criteria)
 router.get('/recipes', async (req, res) => {
     // grab ALL recipes based on search criteria or specified criteria
+
+    //log it:
+    console.info(`${req.method} request received`);
 });
 
 // Route to put edit user's recipe
 router.put('/editrecipe', async (req, res) => {
     // put to specified recipe ID applicable changes with form
+    
+    //log it:
+    console.info(`${req.method} request received`);
 });
 
 // Route to post comment on other users' recipes 
