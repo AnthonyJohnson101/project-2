@@ -44,19 +44,16 @@ router.post('/logout', (req, res) => {
 });
 
 
-// route to create a user
-// router.post('/postrecipe', async (req, res) => {
-    
-// });
-
-
-
 
 // route to post recipe
 router.post('/postrecipe', async (req, res) => {
 
 //create table row based on form submission
     await Recipe.create(req.body);
+
+    res.status(200);
+    res.send();
+// TODO write a catch
 
     //log it:
     console.info(`${req.method} request received to post new recipe`);
@@ -67,7 +64,8 @@ router.post('/postrecipe', async (req, res) => {
 router.get('/userrecipes', async (req, res) => { 
 
     // grab recipes from db based on user ID
-    await Recipe.findAll(req.user_id);
+    const allRecipes = await Recipe.findAll(req.user_id);
+    res.json(JSON.stringify(allRecipes));
 
     //log it:
     console.info(`${req.method} request received to get user's recipes`);    
@@ -77,7 +75,8 @@ router.get('/userrecipes', async (req, res) => {
 router.get('/recipes', async (req, res) => {
     // grab ALL recipes based on search criteria or specified criteria
 
-    await Recipe.findAll();
+    const allRecipes = await Recipe.findAll();
+    res.json(JSON.stringify(allRecipes));
     //ensure front end displays first 30 or whatever number
 
     //log it:
@@ -96,10 +95,14 @@ router.put('/editrecipe', async (req, res) => {
           recipe_id: req.recipe_id
         }
       }
-    )
+    );
+    res.status(200);
+    res.send();
+// TODO write a catch
+
     
     //log it:
-    console.info(`${req.method} request received`);
+    console.info(`${req.method} request received to edit recipe`);
 });
 
 // Route to post comment on other users' recipes 
@@ -107,23 +110,87 @@ router.post('/comment', async (req, res) => {
     // post to recipe comment with username of author
 // 03/13 BUILDING COMMENTS LATER AS STRETCH GOAL
     //log it:
-    console.info(`${req.method} request received`);
+    console.info(`${req.method} request received to post comment`);
 });
 
 // Route to put upvote
 router.put('/upvote', async (req, res) => {
+
+    // grab the row OF the recipe
+    let upvotedRecipe = Recipe.findOne(
+      {
+        where: { 
+          recipe_id: req.recipe_id
+        },
+      });
+
+    //grab the recipe's upvotes
+    upvoteArray = JSON.parse(upvotedRecipe.upvotes);
+    if (!upvoteArray.includes(req.user_id)) {
+
     //put to the upvote count +1 AND prevent user from re-upvoting
+    Recipe.update(
+      {
+        upvotes: JSON.stringify(upvoteArray.push(req.user_id))
+      },
+      { 
+        where: {
+          recipe_id: req.recipe_id
+        }
+      }
+    );
+
+    res.status(200); 
+
+  } else { 
+
+    res.status(400); 
+  }
+
+  res.send();
 
     //log it:
-    console.info(`${req.method} request received`);
+    console.info(`${req.method} request received to add to upvote counter`);
 });
 
 // Route to put downvote
 router.put('/downvote', async (req, res) => {
-    //put to the downvote count +1 AND prevent user from re-downvoting
+
+    // grab the row OF the recipe
+    let downvotedRecipe = Recipe.findOne(
+      {
+        where: { 
+          recipe_id: req.recipe_id
+        },
+      });
+
+    //grab the recipe's upvotes
+    downvoteArray = JSON.parse(downvotedRecipe.downvotes);
+    if (!downvoteArray.includes(req.user_id)) {
+
+    //put to the upvote count +1 AND prevent user from re-upvoting
+    Recipe.update(
+      {
+        downvotes: JSON.stringify(downvoteArray.push(req.user_id))
+      },
+      { 
+        where: {
+          recipe_id: req.recipe_id
+        }
+      }
+    );
+
+    res.status(200); 
+
+  } else { 
+
+    res.status(400); 
+  }
+
+  res.send();
 
     //log it:
-    console.info(`${req.method} request received`);
+    console.info(`${req.method} request received to add to downvote counter`);
 });
 
 
