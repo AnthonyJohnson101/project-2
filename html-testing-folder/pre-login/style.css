@@ -1,0 +1,33 @@
+body {
+    background-color: aliceblue;
+}
+
+.loginNotification {
+    width: 100%;
+    text-align: center;
+}
+
+
+.card {
+margin-left: 2%;
+margin-right: 2%;
+max-width: 100%;
+height: fit-content;
+}
+
+.dropdown {
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+#category {
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+#spicy {
+    margin-left: 0%;
+    margin-right: 0%;
+}
