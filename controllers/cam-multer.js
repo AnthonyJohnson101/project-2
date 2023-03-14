@@ -37,7 +37,7 @@ app.set('view engine', 'handlebars');
 
 const storage = multer.diskStorage({
     destination: function(require, file, cb) {
-        cb(null, 'uploads/');
+        cb(null, '.api/cam-multer.js/');
     },
 });
 
