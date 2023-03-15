@@ -10,20 +10,7 @@ const multer = require('multer');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-//new multer stuff
-let storage = multer.diskStorage({
-  destination: function (req, res, cb) {
-    cb(null, './uploads')
-  },
-  filename: function (req, res, cb) {
-    cb(null, file.originalname)
-  }
 
-});
-
-const upload = multer({ storage: storage });
-
-//old beyond
 const app = express();
 const PORT = process.env.PORT || 3306;
 
@@ -50,13 +37,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('./uploads', express.static('uploads'));
 
-
 app.use(routes);
-
 
 // this is making the database conform to the structure of the object(s), not JUST initializing sequelize
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening on port ' + PORT));
 });
-
 
