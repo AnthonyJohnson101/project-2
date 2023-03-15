@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Recipe } = require('../../models');
+const multer = require('multer');
 
 //new multer stuff
 let storage = multer.diskStorage({
@@ -14,7 +15,6 @@ let storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-//old beyond
 
 
 router.post('/login', async (req, res) => {
