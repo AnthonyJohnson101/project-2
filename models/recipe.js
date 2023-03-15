@@ -35,10 +35,10 @@ Recipe.init(
       type: DataTypes.STRING,
     },
     upvotes: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     downvotes: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     vegan: {
       type: DataTypes.BOOLEAN,
