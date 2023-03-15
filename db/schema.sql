@@ -8,7 +8,7 @@ CREATE TABLE users (
     firstname VARCHAR(45) NOT NULL,
     email VARCHAR(60) NOT NULL,
     pass VARCHAR(60) NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY (userid)
     );
 
 CREATE TABLE recipes (
@@ -33,6 +33,5 @@ CREATE TABLE recipes (
     dairy BOOLEAN NOT NULL,
     seafood BOOLEAN NOT NULL,
     alcohol BOOLEAN NOT NULL,
-    upvotes INT NOT NULL,
-    downvotes INT NOT NULL
+    PRIMARY KEY (recipeid)
 );
