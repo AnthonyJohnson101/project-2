@@ -1,6 +1,22 @@
 const router = require('express').Router();
 const { User, Recipe } = require('../../models');
 
+//new multer stuff
+let storage = multer.diskStorage({
+  destination: function (req, res, cb) {
+    cb(null, './uploads')
+  },
+  filename: function (req, res, cb) {
+    cb(null, file.originalname)
+  }
+
+});
+
+const upload = multer({ storage: storage });
+
+//old beyond
+
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -206,5 +222,22 @@ router.put('/downvote', async (req, res) => {
     //log it:
     console.info(`${req.method} request received to add to downvote counter`);
 });
+
+
+// router.post('/recipe-photo', upload.single('recipe-photo-file'), function (req, res, next) {
+//   // req.files is array of `photos` files
+//   // req.body will contain the text fields, if there were any
+// });
+
+router.post('/recipe-upload-photo', upload.single('recipe-photo'), function (req, res, next) {
+  // req.file is the `profile-file` file
+  // req.body will hold the text fields, if there were any
+  console.log(JSON.stringify(req.file))
+  // var response = '<a href="/">Home</a><br>'
+  // response += "Files uploaded successfully.<br>"
+  let response = `<img src="${req.file.path}" />`
+  return res.send(response)
+})
+
 
 module.exports = router;
