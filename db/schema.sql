@@ -4,8 +4,7 @@ USE recipe_db;
 
 CREATE TABLE users (
     userid INT NOT NULL AUTO_INCREMENT,
-    lastname VARCHAR(45) NOT NULL,
-    firstname VARCHAR(45) NOT NULL,
+    username VARCHAR(60) NOT NULL,
     email VARCHAR(60) NOT NULL,
     pass VARCHAR(60) NOT NULL,
     PRIMARY KEY (userid)
@@ -21,8 +20,8 @@ CREATE TABLE recipes (
     instructions TEXT NOT NULL,
     submitteduser INT NOT NULL,
     timesubmitstamp INT NOT NULL,
-    upvotes INT NOT NULL,
-    downvotes INT NOT NULL,
+    upvotes TEXT NOT NULL,
+    downvotes TEXT NOT NULL,
     vegan BOOLEAN NOT NULL,
     glutenfree BOOLEAN NOT NULL,
     vegetarian BOOLEAN NOT NULL,

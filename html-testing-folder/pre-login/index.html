@@ -24,20 +24,7 @@
                       style="margin-top: -1px;"
                   />
                   </a>
-      
-                  <!-- Toggle button -->
-                  <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-mdb-toggle="collapse"
-                  data-mdb-target="#navbarButtonsExample"
-                  aria-controls="navbarButtonsExample"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                  >
-                  <i class="fas fa-bars"></i>
-                  </button>
-      
+                     
                   <!-- Collapsible wrapper -->
                   <div class="collapse navbar-collapse" id="navbarButtonsExample">
                   <!-- Left links -->
@@ -55,12 +42,6 @@
                       <button type="button" class="btn btn-primary me-3">
                       Sign up for free
                       </button>
-                      <a
-                      class="btn btn-dark px-3"
-                      href="https://github.com/AnthonyJohnson101/project-2"
-                      role="button"
-                      ><i class="fab fa-github"></i
-                      ></a>
                   </div>
                   </div>
                   <!-- Collapsible wrapper -->
@@ -86,7 +67,10 @@
                 </div>
               </div>
 
-              <div class="dropdown sortBy">
+              
+
+              <div class="dropdown">
+                <button id="newButton" type="button" class="btn btn-primary postButton">New Post</button>
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Sort By:
                 </button>
@@ -103,8 +87,7 @@
                   <li class="list-group-item">Log in or sign up to use this feature</li>
                 </ul>
               </div>
-
-          </div>
+            </div>
               
           <div class="col-10">
             <section>
@@ -132,6 +115,16 @@
                           </button>
                           <button class="btn btn-secondary me-md-2" type="button">↑</button>
                           <button class="btn btn-secondary" type="button">↓</button>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              ⚙️
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Favorite</a></li>
+                              <li><a class="dropdown-item" href="#">Edit</a></li>
+                              <li><a class="dropdown-item" href="#">Delete</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -162,6 +155,16 @@
                         </button>
                         <button class="btn btn-secondary me-md-2" type="button">↑</button>
                         <button class="btn btn-secondary" type="button">↓</button>
+                        <div class="dropdown">
+                          <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ⚙️
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Favorite</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -192,16 +195,24 @@
                       </button>
                       <button class="btn btn-secondary me-md-2" type="button">↑</button>
                       <button class="btn btn-secondary" type="button">↓</button>
+                      <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          ⚙️
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Favorite</a></li>
+                          <li><a class="dropdown-item" href="#">Edit</a></li>
+                          <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
-            </section>
-          </div>
-
+          </section>
+        </div>
+      </div>
 
 
           <!--Comment Modal-->
