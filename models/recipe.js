@@ -5,33 +5,33 @@ class Recipe extends Model {}
 
 Recipe.init(
   {
-    recipe_id: {
+    recipeid: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    recipe_name: {
+    recipename: {
       type: DataTypes.STRING,
     },
-    recipe_category: {
+    category: {
       type: DataTypes.STRING,
     },
     ingredients: {
       type: DataTypes.TEXT,
     },
-    prep_time: {
+    preptime: {
       type: DataTypes.STRING,
     },
-    cook_time: {
+    cooktime: {
       type: DataTypes.STRING,
     },
     instructions: {
       type: DataTypes.TEXT,
     },
-    submitted_user: {
+    submitteduser: {
       type: DataTypes.STRING,
     },
-    submitted_timestamp: {
+    timesubmitstamp: {
       type: DataTypes.STRING,
     },
     upvotes: {
@@ -58,25 +58,25 @@ Recipe.init(
     lowcarb: {
       type: DataTypes.BOOLEAN,
     },
-    containsnuts: {
+    nuts: {
       type: DataTypes.BOOLEAN,
     },
-    containsdairy: {
+    dairy: {
       type: DataTypes.BOOLEAN,
     },
-    containsseafood: {
+    seafood: {
       type: DataTypes.BOOLEAN,
     },
-    containsalcohol: {
+    alcohol: {
       type: DataTypes.BOOLEAN,
     }
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     underscored: false,
-    modelName: 'recipe',
+    modelName: 'recipes',
   }
   );
 
