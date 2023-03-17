@@ -1,3 +1,20 @@
+const bcrypt = require('bcrypt');
+// this is the start of bcrypt
+
+const saltRounds = 10;
+const textPassword = '';
+const salt = bcrytp.genSaltSync(saltRounds);
+
+const hashedPassword = await bcrypt.hashSync(textPassword, salt);
+
+const username = '';
+const insertUserQuesry = ''
+await debug.query(insertUserQuesry, [username, password]);
+
+// TO DO: save user passwords inside of sql using schema
+
+console.log(hashedPassword);
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
  console.log("logging in...");
