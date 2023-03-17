@@ -1,0 +1,116 @@
+<form>
+  <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Recipe Name</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Recipe Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Prep Instructions</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Cooking Instructions</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <form method="POST" action="/recipe-upload-photo" enctype="multipart/form-data">
+    <div>
+        <label>Upload a picture of your dish</label>
+        <input type="file" name="recipe-photo" required/>
+    </div>
+    <div>
+        <input type="submit" value="Upload" />
+    </div>
+  </form>
+  <div class="dropdown" id="category">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Prep Time
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">5-10 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">10-15 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">15-25 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">25-40 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">40-60 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">60+ Minutes</a></li>  
+    </ul>
+  </div>
+  <div class="dropdown" id="category">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Cook Time
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">5-10 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">10-15 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">15-25 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">25-40 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">40-60 Minutes</a></li>
+      <li><a class="dropdown-item" href="#">60+ Minutes</a></li> 
+    </ul>
+  </div>
+  <div class="dropdown" id="category">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Category
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Breakfast</a></li>
+        <li><a class="dropdown-item" href="#">Lunch</a></li>
+        <li><a class="dropdown-item" href="#">Dinner</a></li>
+        <li><a class="dropdown-item" href="#">Appetizer</a></li>
+        <li><a class="dropdown-item" href="#">Snack</a></li>
+        <li><a class="dropdown-item" href="#">Beverage</a></li>  
+      </ul>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Vegan</label>
+  </div>
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Gluten Free</label>
+  </div>
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Vegetarian</label>
+  </div>
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Pescatarian</label>
+  </div>
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Low Carb</label>
+  </div>
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Includes Nuts</label>
+  </div>
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Includes Dairy</label>
+  </div>
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Includes Shellfish</label>
+  </div>
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Includes Alcohol</label>
+  </div>
+  <div class="dropdown" id="spicy">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Spiciness
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">0 (Not Spicy)</a></li>
+        <li><a class="dropdown-item" href="#">1</a></li>
+        <li><a class="dropdown-item" href="#">2</a></li>
+        <li><a class="dropdown-item" href="#">3</a></li>
+        <li><a class="dropdown-item" href="#">4</a></li>
+        <li><a class="dropdown-item" href="#">5 (Have EMS on standby)</a></li>  
+      </ul>
+    </div>
+  <button type="submit" class="btn btn-primary">Confirm Edit</button>
+</form>
