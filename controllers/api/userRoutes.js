@@ -28,7 +28,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await userData.checkPassword(req.body.pass);
 
     if (!validPassword) {
       res
@@ -61,7 +61,7 @@ router.post('/logout', (req, res) => {
 
 
 
-// route to post recipe
+// route to post recipe from form (must submit as json)
 router.post('/postrecipe', async (req, res) => {
 
 //create table row based on form submission
@@ -76,18 +76,37 @@ router.post('/postrecipe', async (req, res) => {
 });
 
 
-// Route to get the user's recipes
+// Route to get all the user's recipes based on submitted user ID from front end logic
 router.get('/userrecipes', async (req, res) => { 
 
     // grab recipes from db based on user ID
-    const allRecipes = await Recipe.findAll(req.body.user_id);
-    res.json(JSON.stringify(allRecipes));
+    const userRecipes = await Recipe.findAll({
+      where: {
+        submitteduser: req.body.userid
+      }
+    });
+    res.json(JSON.stringify(userRecipes));
 
     //log it:
     console.info(`${req.method} request received to get user's recipes`);    
 });
 
-// Route to get all recipes (or one route to get recipes based on different criteria)
+// route to get single user recipe
+router.get('/singlerecipe', async (req, res) => {
+
+  const singleRecipe = await Recipe.findOne({
+    where: {
+      recipename: req.body.recipename
+    }
+  })
+  res.json(JSON.stringify(singleRecipe));
+  console.info(`${req.method} request received to get single recipe`);  
+
+
+});
+
+
+// Route to get all recipes
 router.get('/recipes', async (req, res) => {
     // grab ALL recipes based on search criteria or specified criteria
 
@@ -120,7 +139,7 @@ router.put('/editrecipe', async (req, res) => {
       { 
         where: {
           // recipeid: req.body.recipeid
-          recipeid: 1
+          recipeid: req.body.recipeid
         }
       }
 
@@ -150,22 +169,22 @@ router.put('/upvote', async (req, res) => {
     let upvotedRecipe = Recipe.findOne(
       {
         where: { 
-          recipe_id: req.body.recipe_id
+          recipeid: req.body.recipeid
         },
       });
 
     //grab the recipe's upvotes
     upvoteArray = JSON.parse(upvotedRecipe.upvotes);
-    if (!upvoteArray.includes(req.body.user_id)) {
+    if (!upvoteArray.includes(req.body.userid)) {
 
     //put to the upvote count +1 AND prevent user from re-upvoting
     Recipe.update(
       {
-        upvotes: JSON.stringify(upvoteArray.push(req.user_id))
+        upvotes: JSON.stringify(upvoteArray.push(req.userid))
       },
       { 
         where: {
-          recipe_id: req.body.recipe_id
+          recipeid: req.body.recipeid
         }
       }
     );
@@ -191,22 +210,22 @@ router.put('/downvote', async (req, res) => {
     let downvotedRecipe = Recipe.findOne(
       {
         where: { 
-          recipe_id: req.body.recipe_id
+          recipeid: req.body.recipeid
         },
       });
 
     //grab the recipe's upvotes
     downvoteArray = JSON.parse(downvotedRecipe.downvotes);
-    if (!downvoteArray.includes(req.body.user_id)) {
+    if (!downvoteArray.includes(req.body.userid)) {
 
     //put to the upvote count +1 AND prevent user from re-upvoting
     Recipe.update(
       {
-        downvotes: JSON.stringify(downvoteArray.push(req.user_id))
+        downvotes: JSON.stringify(downvoteArray.push(req.userid))
       },
       { 
         where: {
-          recipe_id: req.body.recipe_id
+          recipeid: req.body.recipeid
         }
       }
     );
