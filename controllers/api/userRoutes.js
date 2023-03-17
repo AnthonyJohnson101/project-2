@@ -102,10 +102,8 @@ router.get('/recipes', async (req, res) => {
 // Route to put edit user's recipe
 router.put('/editrecipe', async (req, res) => {
     // put to specified recipe ID applicable changes with form
-
     // receive req.body 
     let changedFields = req.body;
-
     // go through and find all things undefined (loop through keys)
     Object.keys(changedFields).forEach(key => {
       if (changedFields[key] === null) {
@@ -114,19 +112,22 @@ router.put('/editrecipe', async (req, res) => {
       // output object of things that changed
     });
 
- 
-    Recipe.update(
-      {
-        changedFields
-      },
+
+    const result = await Recipe.update(
+      
+        changedFields,
+
       { 
         where: {
-          recipe_id: req.body.recipe_id
+          // recipeid: req.body.recipeid
+          recipeid: 1
         }
       }
+
     );
+
     res.status(200);
-    res.send();
+    res.json(result);
 // TODO write a catch
 
     //log it:
@@ -229,7 +230,7 @@ router.put('/downvote', async (req, res) => {
 //   // req.body will contain the text fields, if there were any
 // });
 
-router.post('/recipe-upload-photo', upload.single('recipe-photo'), function (req, res, next) {
+router.post('/recipeuploadphoto', upload.single('recipephoto'), function (req, res, next) {
   // req.file is the `profile-file` file
   // req.body will hold the text fields, if there were any
   console.log(JSON.stringify(req.file))
