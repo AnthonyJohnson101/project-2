@@ -24,14 +24,14 @@ const result = await response.json();
 });
 
 
+
 //FETCH for POST RECIPE
 fetch('/api/postrecipe', {
     method:'POST',
     headers: {
     'Content-Type': 'application/json'
 },
-// body must grab from page form
-    body: JSON.stringify({ 
+    body: JSON.stringify({
         recipeid: document.getElementById('recipeid'),
         recipename: document.getElementById('recipename'),
         category: document.getElementById('category'),

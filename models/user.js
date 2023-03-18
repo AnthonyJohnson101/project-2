@@ -5,7 +5,7 @@ class User extends Model {}
 
 User.init(
   {
-    user_id: {
+    userid: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -13,7 +13,7 @@ User.init(
     username: {
       type: DataTypes.STRING,
     },
-    password: {
+    pass: {
       type: DataTypes.STRING,
     },
     email: {
