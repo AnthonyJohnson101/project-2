@@ -15,7 +15,9 @@ let storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-
+router.get ('/', () => {
+  console.log("Works")
+})
 
 router.post('/login', async (req, res) => {
   try {

@@ -9,7 +9,7 @@ form.addEventListener('submit', async (event) => {
   const password = document.getElementById('userPassword').value;
   const data = { name, email, password };
   const response = await fetch('/submit-form', {
-    method: 'POST'
+    method: 'POST',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -20,6 +20,7 @@ const result = await response.json();
 // unknown what goes here now
 
 });
+
 
 //FETCH for LOGIN
 fetch('/api/userRoutes.js', {
