@@ -166,21 +166,23 @@ router.post('/comment', async (req, res) => {
 router.put('/upvote', async (req, res) => {
 
     // grab the row OF the recipe
-    let upvotedRecipe = Recipe.findOne(
+    let upvotedRecipe = await Recipe.findOne(
       {
         where: { 
           recipeid: req.body.recipeid
         },
       });
 
-    //grab the recipe's upvotes
-    upvoteArray = JSON.parse(upvotedRecipe.upvotes);
-    if (!upvoteArray.includes(req.body.userid)) {
 
+    //grab the recipe's upvotes
+    upvoteArray = upvotedRecipe.numUpvotes;
+    
+    if (!upvoteArray.includes(req.body.userid.toString())) {
+        upvoteArray.push(req.body.userid)
     //put to the upvote count +1 AND prevent user from re-upvoting
-    Recipe.update(
+    const update = Recipe.update(
       {
-        upvotes: JSON.stringify(upvoteArray.push(req.userid))
+        upvotes: upvoteArray.toString()
       },
       { 
         where: {
@@ -190,7 +192,7 @@ router.put('/upvote', async (req, res) => {
     );
 
     res.status(200); 
-
+    console.info(update);
   } else { 
 
     res.status(400); 
@@ -207,7 +209,7 @@ router.put('/upvote', async (req, res) => {
 router.put('/downvote', async (req, res) => {
 
     // grab the row OF the recipe
-    let downvotedRecipe = Recipe.findOne(
+    let downvotedRecipe = await Recipe.findOne(
       {
         where: { 
           recipeid: req.body.recipeid
@@ -215,13 +217,16 @@ router.put('/downvote', async (req, res) => {
       });
 
     //grab the recipe's upvotes
-    downvoteArray = JSON.parse(downvotedRecipe.downvotes);
-    if (!downvoteArray.includes(req.body.userid)) {
+    downvoteArray = downvotedRecipe.numDownvotes;
+      console.info("user id: ", req.body.userid);
+      console.info("downvote array: ", downvoteArray);
 
+    if (!downvoteArray.includes(req.body.userid.toString())) {
+      downvoteArray.push(req.body.userid)
     //put to the upvote count +1 AND prevent user from re-upvoting
     Recipe.update(
       {
-        downvotes: JSON.stringify(downvoteArray.push(req.userid))
+        downvotes: downvoteArray.toString()
       },
       { 
         where: {

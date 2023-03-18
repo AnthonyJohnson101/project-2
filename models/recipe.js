@@ -1,7 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Recipe extends Model {}
+class Recipe extends Model {
+  get numUpvotes() {
+    let upvotes = this.upvotes.split(",");
+    return upvotes;
+  };
+
+  get numDownvotes() {
+    let downvotes = this.downvotes.split(",");
+    return downvotes;
+  };
+};
 
 Recipe.init(
   {
