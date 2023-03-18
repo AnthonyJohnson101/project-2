@@ -37,7 +37,7 @@
                       <button type="button" class="btn btn-link px-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
                       Login
                       </button>
-                      <button type="button" class="btn btn-primary me-3">
+                      <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#signupModal">
                       Sign up for free
                       </button>
                   </div>
@@ -286,6 +286,39 @@
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="loginInputPassword1">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Login</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+<!-- Sign Up Modal -->
+          <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="loginModalLabel">Sign Up</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="login-form">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="username" class="form-control" id="InputUsername1" aria-describedby="usernameHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="loginInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
                       <input type="password" class="form-control" id="loginInputPassword1">
                     </div>
                   </form>
