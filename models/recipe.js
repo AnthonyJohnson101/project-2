@@ -26,6 +26,9 @@ Recipe.init(
     category: {
       type: DataTypes.STRING,
     },
+    recipehoto: {
+      type: DataTypes.STRING,
+    },
     ingredients: {
       type: DataTypes.TEXT,
     },
