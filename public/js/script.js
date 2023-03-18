@@ -30,7 +30,7 @@ fetch('/api/userRoutes.js', {
 },
     body: JSON.stringify({
         email: '',
-        password: ''
+        pass: ''
     })
 })
 .then(response => response.json())
