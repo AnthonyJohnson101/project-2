@@ -27,6 +27,8 @@ const sess = {
   })
 };
 
+
+
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
@@ -38,6 +40,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('./uploads', express.static('uploads'));
 
 app.use(routes);
+
+app.get('/', (req, res) => {
+  res.render('homepage')
+})
+
 
 // this is making the database conform to the structure of the object(s), not JUST initializing sequelize
 sequelize.sync({ force: false }).then(() => {
