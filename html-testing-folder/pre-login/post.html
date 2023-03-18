@@ -118,6 +118,21 @@
                       <label for="exampleFormControlTextarea1" class="form-label">Prep Instructions</label>
                       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Cooking Instructions</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                    <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
+                      <div>
+                          <label>Upload a picture of your dish</label>
+                          <input type="file" name="profile-file" required/>
+                      </div>
+                      <div>
+                          <input type="submit" value="Upload" />
+                      </div>
+                    </form>
+
                     <div class="dropdown" id="category">
                       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Prep Time
