@@ -229,7 +229,7 @@ router.put('/downvote', async (req, res) => {
 //   // req.body will contain the text fields, if there were any
 // });
 
-router.post('/recipe-upload-photo', upload.single('recipe-photo'), function (req, res, next) {
+router.post('/recipeuploadphoto', upload.single('recipephoto'), function (req, res, next) {
   // req.file is the `profile-file` file
   // req.body will hold the text fields, if there were any
   console.log(JSON.stringify(req.file))

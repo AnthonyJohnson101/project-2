@@ -3,13 +3,13 @@ const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
 const textPassword = '';
-const salt = bcrytp.genSaltSync(saltRounds);
+const salt = bcrypt.genSaltSync(saltRounds);
 
 const hashedPassword = await bcrypt.hashSync(textPassword, salt);
 
 const username = '';
 const insertUserQuesry = ''
-await debug.query(insertUserQuesry, [username, password]);
+await debug.query(insertUserQuery, [username, password]);
 
 // TO DO: save user passwords inside of sql using schema
 

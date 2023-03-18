@@ -1,30 +1,30 @@
 <form>
   <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Recipe Name</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+      <textarea class="form-control" id="recipeName" rows="1"></textarea>
     </div>
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Recipe Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="recipeDescription" rows="3"></textarea>
   </div>
   <div class="mb-3">
     <label for="exampleFormControlTextarea1" class="form-label">Prep Instructions</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" id="prepInstrucitons" rows="3"></textarea>
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Cooking Instructions</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="exampleFormControlTextarea1" class="form-label">Instructions</label>
+    <textarea class="form-control" id="instructions" rows="3"></textarea>
   </div>
-  <form method="POST" action="/recipe-upload-photo" enctype="multipart/form-data">
+  <form method="POST" action="/recipeuploadphoto" enctype="multipart/form-data">
     <div>
         <label>Upload a picture of your dish</label>
-        <input type="file" name="recipe-photo" required/>
+        <input type="file" name="recipephoto" required/>
     </div>
     <div>
         <input type="submit" value="Upload" />
     </div>
   </form>
-  <div class="dropdown" id="category">
+  <div class="dropdown" id="preptime">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       Prep Time
     </button>
@@ -37,7 +37,7 @@
       <li><a class="dropdown-item" href="#">60+ Minutes</a></li>  
     </ul>
   </div>
-  <div class="dropdown" id="category">
+  <div class="dropdown" id="cookingtime">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       Cook Time
     </button>
@@ -64,39 +64,39 @@
       </ul>
   </div>
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <input type="checkbox" class="form-check-input" id="vegan">
     <label class="form-check-label" for="exampleCheck1">Vegan</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="gluten">
       <label class="form-check-label" for="exampleCheck1">Gluten Free</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="vegetarian">
       <label class="form-check-label" for="exampleCheck1">Vegetarian</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="pescatarian">
       <label class="form-check-label" for="exampleCheck1">Pescatarian</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="lowcarb">
       <label class="form-check-label" for="exampleCheck1">Low Carb</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="nuts">
       <label class="form-check-label" for="exampleCheck1">Includes Nuts</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="dairy">
       <label class="form-check-label" for="exampleCheck1">Includes Dairy</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="seafood">
       <label class="form-check-label" for="exampleCheck1">Includes Shellfish</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="alcohol">
       <label class="form-check-label" for="exampleCheck1">Includes Alcohol</label>
   </div>
   <div class="dropdown" id="spicy">
