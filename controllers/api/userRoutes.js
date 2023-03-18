@@ -118,6 +118,7 @@ router.get('/recipes', async (req, res) => {
     console.info(`${req.method} request received to get all recipes`);
 });
 
+
 // Route to put edit user's recipe
 router.put('/editrecipe', async (req, res) => {
     // put to specified recipe ID applicable changes with form
@@ -176,7 +177,7 @@ router.put('/upvote', async (req, res) => {
 
     //grab the recipe's upvotes
     upvoteArray = upvotedRecipe.numUpvotes;
-    
+
     if (!upvoteArray.includes(req.body.userid.toString())) {
         upvoteArray.push(req.body.userid)
     //put to the upvote count +1 AND prevent user from re-upvoting
