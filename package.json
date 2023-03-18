@@ -4,6 +4,7 @@
   "main": "server.js",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
     "express": "^4.17.1",
     "express-handlebars": "^7.0.2",
