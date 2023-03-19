@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Recipe } = require('../../models');
 const multer = require('multer');
+const bcrypt = require('bcrypt');
 
 //new multer stuff
 let storage = multer.diskStorage({
@@ -15,6 +16,25 @@ let storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+
+
+router.post('/signup', async (req, res) => {
+//create table row based on form submission
+   if (!req.body.name || !req.body.email || !req.body.password) {
+    res.status(400)
+      .json({ message: 'Please provide all required information.' });
+    console.info(`${req.method} request received but failed to create new user`);
+  } else {
+    await User.create(req.body);
+
+    res.status(200);
+    res.send();
+  // TODO write a catch
+
+  //log it:
+    console.info(`${req.method} request received to create new user`);
+  };
+});
 
 
 router.post('/login', async (req, res) => {
@@ -48,6 +68,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
@@ -107,7 +128,7 @@ router.get('/singlerecipe', async (req, res) => {
 
 
 // Route to get all recipes
-router.get('/recipes', async (req, res) => {
+ router.get('/recipes', async (req, res) => {
     // grab ALL recipes based on search criteria or specified criteria
 
     const allRecipes = await Recipe.findAll();
@@ -117,6 +138,7 @@ router.get('/recipes', async (req, res) => {
     //log it:
     console.info(`${req.method} request received to get all recipes`);
 });
+
 
 
 // Route to put edit user's recipe

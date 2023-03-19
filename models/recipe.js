@@ -26,7 +26,7 @@ Recipe.init(
     category: {
       type: DataTypes.STRING,
     },
-    recipehoto: {
+    recipephoto: {
       type: DataTypes.STRING,
     },
     ingredients: {
