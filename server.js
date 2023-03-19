@@ -4,6 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/auth');
+const bcrypt = require('bcrypt');
 
 
 
@@ -40,10 +41,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('./uploads', express.static('uploads'));
 
 app.use(routes);
-
-app.get('/', (req, res) => {
-  res.render('homepage')
-})
 
 
 // this is making the database conform to the structure of the object(s), not JUST initializing sequelize

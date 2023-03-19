@@ -85,7 +85,7 @@ fetch('/api/users/${loggedInUserId}', {
 
 
 //FETCH for ALL RECIPE
-fetch('/api/recipes', {
+function load() { window.onload(fetch('/api/recipes', {
     method:'GET',
     headers: {
     'Content-Type': 'application/json'
@@ -96,10 +96,12 @@ fetch('/api/recipes', {
 .then(data => {
         // figure out how to print it all to the page
     console.log(data);
+    return data;
 })
 .catch(error => {
     console.error(error);
-});
+})
+)};
 
 //FETCH for EDIT RECIPES
 fetch('/api/editrecipe', {
@@ -164,3 +166,5 @@ if (response.ok) {
     console.error('Cannot upload photo');
 }
 });
+
+load();
