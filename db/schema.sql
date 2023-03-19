@@ -14,6 +14,7 @@ CREATE TABLE recipes (
     recipeid INT NOT NULL AUTO_INCREMENT,
     recipename VARCHAR(45) NOT NULL,
     category VARCHAR(45) NOT NULL,
+    recipephoto VARCHAR(255),
     ingredients TEXT NOT NULL,
     preptime VARCHAR(100) NOT NULL,
     cooktime VARCHAR(100) NOT NULL,

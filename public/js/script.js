@@ -64,3 +64,11 @@ fetch('/api/userRoutes.js', {
 .catch(error => {
     console.error(error);
 });
+
+// FETCH GET for get all recipes
+// FETCH GET for get all user's recipes
+// FETCH GET for get single recipe
+// FETCH PUT for edit recipe
+// FETCH PUT for upvotes
+// FETCH PUT for downvotes
+// FETCH POST for uploading photo

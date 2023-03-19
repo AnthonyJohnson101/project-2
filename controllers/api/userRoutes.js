@@ -235,11 +235,8 @@ router.put('/downvote', async (req, res) => {
         }
       }
     );
-
     res.status(200); 
-
   } else { 
-
     res.status(400); 
   }
 
