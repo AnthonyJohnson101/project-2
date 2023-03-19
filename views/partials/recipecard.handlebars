@@ -5,15 +5,18 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5 class="card-title">{{recipename}}</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <h5 class="card-title"><a href="#">{{recipename}}</a></h5>
+                          <p class="ingredients">{{ingredients}}</p>
+                          <p class="prep-cook-time">Prep time: {{preptime}}, Cook time: {{cooktime}}</p>
+                          <p class="card-text">{{instructions}}</p>
                         </div>
                       </div>                     
                     </div>
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-sm-10">
-                        <p class="card-text"><small class="text-muted">Posted at 5:08PM 3/13/2023</small></p>
+                        <p class="card-text"><small class="text-muted">Posted at {{timesubmitstamp}}</small></p>
+                        <p class="upvotes, downvotes">{{upvotes.length}} upvotes, {{downvotes.length}} downvotes</p>
                       </div>
                       <div class="col-sm-2">
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
