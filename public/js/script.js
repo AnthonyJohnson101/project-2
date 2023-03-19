@@ -141,6 +141,7 @@ fetch('/api/editrecipe', {
 .catch(error => {
     console.error(error);
 });
+
 //FETCH for COMMENT (STRETCH GOAL)
 
 //FETCH for UPVOTE (STRETCH GOAL)
@@ -168,3 +169,13 @@ if (response.ok) {
 });
 
 load();
+
+
+// FETCH GET for get all recipes
+// FETCH GET for get all user's recipes
+// FETCH GET for get single recipe
+// FETCH PUT for edit recipe
+// FETCH PUT for upvotes
+// FETCH PUT for downvotes
+// FETCH POST for uploading photo
+
