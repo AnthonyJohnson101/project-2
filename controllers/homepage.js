@@ -13,4 +13,9 @@ router.get('/', async (req, res) => {
 
   module.exports = router;
 
+  router.get('/postrecipe', async (req, res) => {
+    console.log("success!");
+    res.render('post');
+  });
+
   // sign up post request to create user 

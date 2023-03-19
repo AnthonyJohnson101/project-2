@@ -1,116 +1,112 @@
 <form>
   <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Recipe Name</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Recipe Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" id="recipename" rows="1"></textarea>
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Prep Instructions</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="exampleFormControlTextarea1" class="form-label">Ingredients</label>
+    <textarea class="form-control" id="ingredients" rows="3"></textarea>
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Cooking Instructions</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="exampleFormControlTextarea1" class="form-label">Instructions</label>
+    <textarea class="form-control" id="instructions" rows="3"></textarea>
   </div>
   <form method="POST" action="/recipe-upload-photo" enctype="multipart/form-data">
     <div>
-        <label>Upload a picture of your dish</label>
+        <label>Upload a picture of your dish (WIP)</label>
         <input type="file" name="recipe-photo" required/>
-    </div>
     <div>
         <input id="submitPhoto" type="submit" value="Upload" />
     </div>
   </form>
-  <div class="dropdown" id="category">
+  <div class="dropdown" id="drop">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       Prep Time
     </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">5-10 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">10-15 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">15-25 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">25-40 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">40-60 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">60+ Minutes</a></li>  
-    </ul>
+    <select class="dropdown-menu" id="preptime">
+      <option value="5-10 Minutes">5-10 Minutes</option>
+      <option value="10-15 Minutes">10-15 Minutes</option>
+      <option value="15-25 Minutes">15-25 Minutes</option>
+      <option value="25-40 Minutes">25-40 Minutes</option>
+      <option value="40-60 Minutes">40-60 Minutes</option>
+      <option value="60+ Minutes">60+ Minutes</option>  
+    </select>
   </div>
-  <div class="dropdown" id="category">
+  <div class="dropdown" id="drop">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       Cook Time
     </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">5-10 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">10-15 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">15-25 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">25-40 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">40-60 Minutes</a></li>
-      <li><a class="dropdown-item" href="#">60+ Minutes</a></li> 
-    </ul>
+    <select class="dropdown-menu" id="cooktime">
+      <option value="5-10 Minutes">5-10 Minutes</option>
+      <option value="10-15 Minutes">10-15 Minutes</option>
+      <option value="15-25 Minutes">15-25 Minutes</option>
+      <option value="25-40 Minutes">25-40 Minutes</option>
+      <option value="40-60 Minutes">40-60 Minutes</option>
+      <option value="60+ Minutes">60+ Minutes</option> 
+    </select>
   </div>
-  <div class="dropdown" id="category">
+  <div class="dropdown" id="drop">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Category
       </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Breakfast</a></li>
-        <li><a class="dropdown-item" href="#">Lunch</a></li>
-        <li><a class="dropdown-item" href="#">Dinner</a></li>
-        <li><a class="dropdown-item" href="#">Appetizer</a></li>
-        <li><a class="dropdown-item" href="#">Snack</a></li>
-        <li><a class="dropdown-item" href="#">Beverage</a></li>  
-      </ul>
+      <select class="dropdown-menu" id="category">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Appetizer">Appetizer<option>
+        <option value="Snack">Snack</option>
+        <option value="Beverage">Beverage</option>  
+      </select>
   </div>
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <input type="checkbox" class="form-check-input" id="vegan" value="yes">
     <label class="form-check-label" for="exampleCheck1">Vegan</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="glutenfree" value="yes">
       <label class="form-check-label" for="exampleCheck1">Gluten Free</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="vegetarian" value="yes">
       <label class="form-check-label" for="exampleCheck1">Vegetarian</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="pescatarian" value="yes">
       <label class="form-check-label" for="exampleCheck1">Pescatarian</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="lowcarb" value="yes">
       <label class="form-check-label" for="exampleCheck1">Low Carb</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="nuts" value="yes">
       <label class="form-check-label" for="exampleCheck1">Includes Nuts</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="dairy" value="yes">
       <label class="form-check-label" for="exampleCheck1">Includes Dairy</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Includes Shellfish</label>
+      <input type="checkbox" class="form-check-input" id="seafood" value="yes">
+        <label class="form-check-label" for="exampleCheck1">Includes seafood</label>
   </div>
   <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Includes Alcohol</label>
+      <input type="checkbox" class="form-check-input" id="alcohol">
+        <label class="form-check-label" for="exampleCheck1">Includes Alcohol</label>
   </div>
-  <div class="dropdown" id="spicy">
+  <div class="dropdown" id="drop">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Spiciness
       </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">0 (Not Spicy)</a></li>
-        <li><a class="dropdown-item" href="#">1</a></li>
-        <li><a class="dropdown-item" href="#">2</a></li>
-        <li><a class="dropdown-item" href="#">3</a></li>
-        <li><a class="dropdown-item" href="#">4</a></li>
-        <li><a class="dropdown-item" href="#">5 (Have EMS on standby)</a></li>  
-      </ul>
+      <select id="spicy" class="dropdown-menu">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>  
+      </select>
     </div>
-  <button type="submit" class="btn btn-primary">Post Recipe</button>
+  <button type="submit" class="btn btn-primary" id="postrecipe">Post Recipe</button>
 </form>
+<script src="/js/script.js" type="JavaScript"></script>
