@@ -19,7 +19,7 @@ CREATE TABLE recipes (
     preptime VARCHAR(100) NOT NULL,
     cooktime VARCHAR(100) NOT NULL,
     instructions TEXT NOT NULL,
-    submitteduser INT NOT NULL,
+    submitteduser VARCHAR(45) NOT NULL,
     timesubmitstamp INT NOT NULL,
     upvotes TEXT NOT NULL,
     downvotes TEXT NOT NULL,
