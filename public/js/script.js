@@ -5,29 +5,6 @@ let signupButton;
 let postButton;
 let editButton;
 let allRecipes;
-let form;
-// fetch for login.handlebars
-if (document.getElementById('form')) {
- form = document.getElementById('form');
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const name = document.getElementById('userUsername').value;
-  const email = document.getElementById('userEmail').value;
-  const password = document.getElementById('userPassword').value;
-  const data = { name, email, password };
-  const response = await fetch('/submit-form', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-});
-const result = await response.json();
-
-// unknown what goes here now
-
-});
-};
 
 
 
@@ -75,7 +52,7 @@ postButton.addEventListener("click", async _ => {
         preptime: document.getElementById('preptime').value,
         cooktime: document.getElementById('cooktime').value,
         instructions: document.getElementById('instructions').value,
-        submitteduser: 3, //document.getElementById('submitteduser').value,  // grab user ID from login
+        submitteduser:  document.getElementById('username').value,
         timesubmitstamp: 21,  // ignore for now, stretch goal
         upvotes: "", // set to nothing as later userid will be added when upvoted by the user
         downvotes: "", // same as above
@@ -92,7 +69,7 @@ postButton.addEventListener("click", async _ => {
     }),
     });
     if (response.ok) {
-        document.location.replace('/');
+        document.location.redirect('/');
       }
 });
 };

@@ -20,7 +20,10 @@ const hbs = exphbs.create({ helpers });
 const sess = {
   // this should be in .env ideally
   secret: 'Recipe secret',
-  cookie: {},
+  cookie: {
+    // Stored in milliseconds
+    maxAge: 24 * 60 * 60 * 1000, // expires after 1 day
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
