@@ -23,4 +23,9 @@ router.get('/', async (req, res) => {
     res.render('signup'); 
   });
 
+  router.get('/login-page', async (req, res) => {
+    // console.log("success!");
+    res.render('login');
+  });
+
   // sign up post request to create user 

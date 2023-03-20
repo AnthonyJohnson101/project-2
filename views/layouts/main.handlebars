@@ -49,9 +49,11 @@
                   <!-- Left links -->
       
                   <div class="d-flex align-items-center">
-                      <button type="button" class="btn btn-link px-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    <a href="./login-page">
+                      <button type="button" class="btn btn-link px-3 me-2" > {{!-- data-bs-toggle="modal" data-bs-target="#loginModal" --}}
                       Login
                       </button>
+                      </a>
                       <a href="./signup-page">
                       <button type="button" class="btn btn-primary me-3">
                       {{!-- data-bs-toggle="modal" data-bs-target="#signupModal"> --}}
@@ -68,12 +70,15 @@
           </header>
       
       {{!-- here we need some if logic to display login to see more recipes if not logged in or Welcome, $username if logged in --}}
+
           <main>
             <section class="loginNotification">
                 <h1>
                     Login to see more recipies!
                 </h1>
             </section>
+
+
 
           <div class="row">
             <div class="col-2">
@@ -176,20 +181,20 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form id="loginForm">
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email</label>
-                      <input type="username" class="form-control" id="InputUsername1" aria-describedby="usernameHelp">
+                      <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="loginInputPassword1">
+                      <input type="password" class="form-control" id="userPassword">
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Login</button>
+                  <button type="submit" class="btn btn-primary" id="loginButton">Login</button>
                 </div>
               </div>
             </div>

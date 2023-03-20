@@ -5,29 +5,6 @@ let signupButton;
 let postButton;
 let editButton;
 let allRecipes;
-let form;
-// fetch for login.handlebars
-if (document.getElementById('form')) {
- form = document.getElementById('form');
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const name = document.getElementById('userUsername').value;
-  const email = document.getElementById('userEmail').value;
-  const password = document.getElementById('userPassword').value;
-  const data = { name, email, password };
-  const response = await fetch('/submit-form', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-});
-const result = await response.json();
-
-// unknown what goes here now
-
-});
-};
 
 
 

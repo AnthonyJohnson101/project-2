@@ -2,6 +2,18 @@ const router = require('express').Router();
 const { User, Recipe } = require('../../models');
 const multer = require('multer');
 const bcrypt = require('bcrypt');
+// this is the start of bcrypt
+
+const saltRounds = 10;
+const textPassword = '';
+const salt = bcrypt.genSaltSync(saltRounds);
+
+const hashedPassword = bcrypt.hashSync(textPassword, salt);
+
+const username = '';
+const insertUserQuery = ''
+// debug.query(insertUserQuery, [username, password]);
+console.log(hashedPassword);
 
 //new multer stuff
 let storage = multer.diskStorage({
