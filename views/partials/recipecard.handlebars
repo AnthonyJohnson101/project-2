@@ -15,8 +15,40 @@
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-sm-10">
+                        <p class="card-text">
+                          {{#if vegan}}
+                            Vegan,
+                          {{/if}}
+                          {{#if vegetarian}}
+                            Vegetarian,
+                          {{/if}}
+                          {{#if glutenfree}}
+                            Gluten Free,
+                          {{/if}}
+                          {{#if pescatarian}}
+                            Pescatarian,
+                          {{/if}}
+                          {{#if spicy}}
+                            Spicy,
+                          {{/if}}
+                          {{#if lowcarb}}
+                            Low Carb,
+                          {{/if}}
+                          {{#if nuts}}
+                            Contains nuts,
+                          {{/if}}
+                          {{#if dairy}}
+                            Contains dairy,
+                          {{/if}}
+                          {{#if seafood}}
+                            Contains seafood,
+                          {{/if}}
+                          {{#if alcohol}}
+                            Contains alcohol
+                          {{/if}}
+                        </p>
                         <p class="card-text"><small class="text-muted">Posted at {{timesubmitstamp}}</small></p>
-                        <p class="upvotes, downvotes">{{upvotes.length}} upvotes, {{downvotes.length}} downvotes</p>
+                        <p class="upvotes-downvotes"><small class ="text-muted">{{upvotes.length}} upvotes, {{downvotes.length}} downvotes</small></p>
                       </div>
                       <div class="col-sm-2">
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
