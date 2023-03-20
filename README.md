@@ -13,10 +13,10 @@ To navigate to the web application in your browser, click [here](https://recipee
 ## Credits
 
 Collaborators include:
-- [Benjamin Moore] (https://github.com/benjammo)
+- [Benjamin Moore](https://github.com/benjammo)
 - [Anthony Johnson](https://github.com/AnthonyJohnson101)
-- [Cameron Schlueter] (https://github.com/cameron-schlueter)
-- [Tony Trocino] (https://github.com/tonytrocino)
+- [Cameron Schlueter](https://github.com/cameron-schlueter)
+- [Tony Trocino](https://github.com/tonytrocino)
 
 
 ## Features
