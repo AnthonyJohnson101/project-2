@@ -1,5 +1,5 @@
 // const { response } = require("express");
-const fileInput = document.querySelector('recipe-photo-input');
+// const fileInput = document.querySelector('recipe-photo-input');
 // const submitButton = document.querySelector('submitPhoto');
 let signupButton;
 let postButton;
@@ -13,7 +13,7 @@ if (document.getElementById('signup')) {
     signupButton = document.getElementById('signup');
 
 signupButton.addEventListener("click", async _ => {
-
+    _.preventDefault();
     const response = await fetch('/api/users/signup', {
         method:'POST',
         headers: {
@@ -37,7 +37,7 @@ if (document.getElementById('postrecipe')) {
     postButton = document.getElementById('postrecipe'); 
 
 postButton.addEventListener("click", async _ => {
-
+    _.preventDefault();
         const response = await fetch('/api/users/postrecipe', {
             method:'POST',
             headers: {
@@ -69,7 +69,7 @@ postButton.addEventListener("click", async _ => {
     }),
     });
     if (response.ok) {
-        document.location.redirect('/');
+        document.location.replace('/');
       }
 });
 };
