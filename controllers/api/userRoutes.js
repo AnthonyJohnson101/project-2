@@ -20,7 +20,7 @@ const upload = multer({ storage: storage });
 
 router.post('/signup', async (req, res) => {
 //create table row based on form submission
-   if (!req.body.name || !req.body.email || !req.body.password) {
+   if (!req.body.username || !req.body.email || !req.body.password) {
     res.status(400)
       .json({ message: 'Please provide all required information.' });
     console.info(`${req.method} request received but failed to create new user`);
@@ -87,7 +87,6 @@ router.post('/postrecipe', async (req, res) => {
 
 //create table row based on form submission
     await Recipe.create(req.body);
-
     res.status(200);
     res.send();
 // TODO write a catch

@@ -1,37 +1,64 @@
 // const { response } = require("express");
 const fileInput = document.querySelector('recipe-photo-input');
-const submitButton = document.querySelector('submitPhoto');
-
+// const submitButton = document.querySelector('submitPhoto');
+let signupButton;
+let postButton;
+let editButton;
+let allRecipes;
+let form;
 // fetch for login.handlebars
-// const form = document.getElementById('form');
-// form.addEventListener('submit', async (event) => {
-//   event.preventDefault();
-//   const name = document.getElementById('userUsername').value;
-//   const email = document.getElementById('userEmail').value;
-//   const password = document.getElementById('userPassword').value;
-//   const data = { name, email, password };
-//   const response = await fetch('/submit-form', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(data)
-// });
-// const result = await response.json();
+if (document.getElementById('form')) {
+ form = document.getElementById('form');
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const name = document.getElementById('userUsername').value;
+  const email = document.getElementById('userEmail').value;
+  const password = document.getElementById('userPassword').value;
+  const data = { name, email, password };
+  const response = await fetch('/submit-form', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+});
+const result = await response.json();
 
-// // unknown what goes here now
+// unknown what goes here now
 
-// });
+});
+};
 
 
+
+//FETCH for signup
+if (document.getElementById('signup')) {
+    signupButton = document.getElementById('signup');
+
+signupButton.addEventListener("click", async _ => {
+
+    const response = await fetch('/api/users/signup', {
+        method:'POST',
+        headers: {
+            'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        username: document.getElementById('username').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+    }),
+
+});
+if (response.ok) {
+    document.location.replace('/');
+  }
+});
+};
 
 //FETCH for POST RECIPE
-const postButton = document.getElementById('postrecipe');
-// console.log(document.getElementById('spicy').value);
-// console.log(document.getElementById('spicy').options[document.getElementById('spicy').selctedIndex].value);
-// console.log(document.getElementById('glutenfree').checked);
-// console.log(document.getElementById('vegetarian').checked);
-// console.log(document.getElementById('pescatarian').checked);
+if (document.getElementById('postrecipe')) {
+    postButton = document.getElementById('postrecipe'); 
+
 postButton.addEventListener("click", async _ => {
 
         const response = await fetch('/api/users/postrecipe', {
@@ -39,7 +66,7 @@ postButton.addEventListener("click", async _ => {
             headers: {
                 'Content-Type': 'application/json'
         },
-     body: JSON.stringify({
+        body: JSON.stringify({
         // recipeid: document.getElementById('recipeid').textContent,
         recipename: document.getElementById('recipename').value,
         category: document.getElementById('category').value,
@@ -68,9 +95,11 @@ postButton.addEventListener("click", async _ => {
         document.location.replace('/');
       }
 });
+};
 
 //FETCH for USER RECIPES
-const loggedInUserId = document.getElementById('users').value;
+if (document.getElementById('users')) {
+loggedInUserId = document.getElementById('users').value;
 
 fetch(`/api/users/${loggedInUserId}`, {
     method:'GET',
@@ -87,10 +116,13 @@ fetch(`/api/users/${loggedInUserId}`, {
 .catch(error => {
     console.error(error);
 });
-
+};
 
 //FETCH for ALL RECIPE
-fetch('/api/recipes', {
+if (document.getElementById('allRecipes')) {
+    allRecipes = document.getElementById('allRecipes');
+
+fetch('/api/users/recipes', {
         method:'GET',
         headers: {
         'Content-Type': 'application/json'
@@ -106,9 +138,12 @@ fetch('/api/recipes', {
     .catch(error => {
         console.error(error);
 });
+};
 
 //FETCH for EDIT RECIPES
-fetch('/api/editrecipe', {
+if (editButton = document.getElementById('editButton')) {
+editButton = document.getElementById('editButton');
+fetch('/api/users/editrecipe', {
     method:'PUT',
     headers: {
     'Content-Type': 'application/json'
@@ -145,6 +180,7 @@ fetch('/api/editrecipe', {
 .catch(error => {
     console.error(error);
 });
+};
 
 //FETCH for COMMENT (STRETCH GOAL)
 
@@ -153,6 +189,8 @@ fetch('/api/editrecipe', {
 //FETCH for DOWNVOTE (STRETCH GOAL)
 
 //FETCH for RECIPE PHOTO
+if (document.getElementById('submitButton')) {
+submitButton = document.getElementById('submitButton');
 
 submitButton.addEventListener('click', async (event) => {
     event.preventDefault();
@@ -171,6 +209,7 @@ if (response.ok) {
     console.error('Cannot upload photo');
 }
 });
+}
 
 
 // FETCH GET for get all recipes

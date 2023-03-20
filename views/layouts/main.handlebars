@@ -43,7 +43,7 @@
                   <!-- Left links -->
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                      <a class="nav-link" href="#">ReciPeers</a>
+                      <a class="nav-link" href="./">ReciPeers</a>
                       </li>
                   </ul>
                   <!-- Left links -->
@@ -52,9 +52,12 @@
                       <button type="button" class="btn btn-link px-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
                       Login
                       </button>
-                      <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#signupModal">
+                      <a href="./signup-page">
+                      <button type="button" class="btn btn-primary me-3">
+                      {{!-- data-bs-toggle="modal" data-bs-target="#signupModal"> --}}
                       Sign up for free
                       </button>
+                      </a>
                   </div>
                   </div>
                   <!-- Collapsible wrapper -->
@@ -192,7 +195,7 @@
             </div>
           </div>
 
-          <!-- Signup Modal -->
+          <!-- Signup Modal, not currently using -->
           <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
