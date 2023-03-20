@@ -1,3 +1,5 @@
+if (document.getElementById('logoutButton')) {
+  const logoutButton = document.getElementById('logoutButton');
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',
@@ -7,8 +9,10 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace('/'); //replace('/login')
   } else {
-    alert(response.statusText);
+    alert('You are not currently logged in');
   }
 };
 
-document.querySelector('#logout').addEventListener('click', logout);
+document.querySelector('#logoutButton').addEventListener('click', logout);
+
+};

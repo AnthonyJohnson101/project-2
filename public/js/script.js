@@ -52,7 +52,7 @@ postButton.addEventListener("click", async _ => {
         preptime: document.getElementById('preptime').value,
         cooktime: document.getElementById('cooktime').value,
         instructions: document.getElementById('instructions').value,
-        submitteduser: 3, //document.getElementById('submitteduser').value,  // grab user ID from login
+        submitteduser:  document.getElementById('username').value,
         timesubmitstamp: 21,  // ignore for now, stretch goal
         upvotes: "", // set to nothing as later userid will be added when upvoted by the user
         downvotes: "", // same as above
@@ -69,7 +69,7 @@ postButton.addEventListener("click", async _ => {
     }),
     });
     if (response.ok) {
-        document.location.replace('/');
+        document.location.redirect('/');
       }
 });
 };

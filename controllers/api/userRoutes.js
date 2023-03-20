@@ -4,16 +4,16 @@ const multer = require('multer');
 const bcrypt = require('bcrypt');
 // this is the start of bcrypt
 
-const saltRounds = 10;
-const textPassword = '';
-const salt = bcrypt.genSaltSync(saltRounds);
+// const saltRounds = 10;
+// const textPassword = '';
+// const salt = bcrypt.genSaltySnc(saltRounds);
 
-const hashedPassword = bcrypt.hashSync(textPassword, salt);
+// const hashedPassword = bcrypt.hashSync(textPassword, salt);
 
 const username = '';
 const insertUserQuery = ''
 // debug.query(insertUserQuery, [username, password]);
-console.log(hashedPassword);
+// console.log(hashedPassword);
 
 //new multer stuff
 let storage = multer.diskStorage({
@@ -50,9 +50,10 @@ router.post('/signup', async (req, res) => {
 
 
 router.post('/login', async (req, res) => {
+  // console.info(req.body.email, req.body.password, bcrypt.hash(req.body.password, 10).then( async (data) => await data ));
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
-
+  // console.info(userData.userid, userData.email, userData.password, userData.username);
     if (!userData) {
       res
         .status(400)
@@ -60,21 +61,24 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.pass);
-
+    const validPassword = bcrypt.compare(req.body.password, userData.password).then(function(result) { return result});
+    
     if (!validPassword) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
+        console.info("failed")
       return;
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = userData.userid;
+      // req.session.userInfo = { userData };  //stored all user data as object
       req.session.logged_in = true;
-      
       res.json({ user: userData, message: 'You are now logged in!' });
+      console.info(`you are now logged in with ${userData.username}`);
     });
+
 
   } catch (err) {
     res.status(400).json(err);

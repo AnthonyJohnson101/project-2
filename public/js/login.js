@@ -1,10 +1,6 @@
-
-// TO DO: save user passwords inside of sql using schema
-
-
 if (document.getElementById('loginButton')) {
   form = document.getElementById('loginButton');
-  form.addEventListener('submit', async (event) => {
+  form.addEventListener('click', async (event) => {
       event.preventDefault();
  console.log("logging in...");
   const email = document.querySelector('#userEmail').value.trim();

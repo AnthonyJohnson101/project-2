@@ -5,7 +5,7 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5 class="card-title"><a href="#">{{recipename}}</a></h5>
+                          <h5 class="card-title">{{recipename}}</h5>
                           <p class="ingredients">Ingredients: {{ingredients}}</p>
                           <p class="prep-cook-time">Prep time: {{preptime}}, Cook time: {{cooktime}}</p>
                           <p class="card-text">Instructions: {{instructions}}</p>
@@ -47,7 +47,7 @@
                             Contains alcohol
                           {{/if}}
                         </p>
-                        <p class="card-text"><small class="text-muted">Posted at {{timesubmitstamp}}</small></p>
+                        <p class="card-text"><small class="text-muted">Posted by {{submitteduser}}</small></p>
                         <p class="upvotes-downvotes"><small class ="text-muted">{{upvotes.length}} upvotes, {{downvotes.length}} downvotes</small></p>
                       </div>
                       <div class="col-sm-2">
