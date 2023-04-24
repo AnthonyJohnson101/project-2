@@ -5,6 +5,7 @@ ReciPeers is a recipe blog that can be used to share or find amazing recipes
 ## Description
 
 For this project, the goal was to create a free and easy to use recipe blog.
+![image](https://user-images.githubusercontent.com/116526152/234104372-fe05e745-876b-4ab6-8632-22dea19fe816.png)
 
 ## Usage
 
